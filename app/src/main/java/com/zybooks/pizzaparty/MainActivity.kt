@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var numAttendEditText: EditText
     private lateinit var numPizzasTextView: TextView
     private lateinit var howHungryRadioGroup: RadioGroup
+    private lateinit var pizzaSizeRadioGroup: RadioGroup
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         numAttendEditText = findViewById(R.id.num_attend_edit_text)
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
+        pizzaSizeRadioGroup = findViewById(R.id.size_radio_group)
         numPizzasTextView.setText("")
     }
 
@@ -35,8 +37,14 @@ class MainActivity : AppCompatActivity() {
             R.id.medium_radio_button -> PizzaCalculator.HungerLevel.MEDIUM
             else -> PizzaCalculator.HungerLevel.RAVENOUS
         }
+        // Get pizza size selection
+        val pizzaSize = when (pizzaSizeRadioGroup.getCheckedRadioButtonId()) {
+            R.id.small_radio_button -> PizzaCalculator.PizzaSize.SMALL
+            R.id.med_radio_button -> PizzaCalculator.PizzaSize.MED
+            else -> PizzaCalculator.PizzaSize.LARGE
+        }
         // Get the number of pizzas needed using the Model: Pizza Calculator
-        val calculator = PizzaCalculator(numAttend,hungerLevel)
+        val calculator = PizzaCalculator(numAttend,hungerLevel, pizzaSize)
         val totalPizzas = calculator.totalPizzas
 
         // Place totalPizzas into the string resource and display
