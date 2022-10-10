@@ -63,15 +63,15 @@
         android:layout_marginTop="20dp"
         android:text="@string/pizza_size"
         android:textSize="24sp"
-        android:labelFor="@id/hungry_radio_group" />
+        android:labelFor="@id/pizza_size_radio_group" />
 
     <RadioGroup
-        android:id="@+id/size_radio_group"
+        android:id="@+id/pizza_size_radio_group"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <RadioButton
-            android:id="@+id/ssmall_radio_button"
+            android:id="@+id/small_radio_button"
             android:text="@string/ssmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:checked="true" />
         <RadioButton
-            android:id="@+id/slarge_radio_button"
+            android:id="@+id/large_radio_button"
             android:text="@string/slarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
