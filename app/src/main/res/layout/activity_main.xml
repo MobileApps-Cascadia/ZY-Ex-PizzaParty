@@ -19,12 +19,13 @@
 
     <EditText
         android:id="@+id/num_attend_edit_text"
-        android:layout_width="wrap_content"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="5"
+        android:hint="@string/_10"
         android:importantForAutofill="no"
-        android:hint="@string/_10" />
+        android:inputType="number"
+        android:minHeight="48dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,6 +54,36 @@
         <RadioButton
             android:id="@+id/ravenous_radio_button"
             android:text="@string/ravenous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/pizza_size"
+        android:textSize="24sp"
+        android:labelFor="@id/hungry_radio_group" />
+
+    <RadioGroup
+        android:id="@+id/pizzasizes_radio_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/smalls_radio_button"
+            android:text="@string/small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/mediums_radio_button"
+            android:text="@string/mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/larges_radio_button"
+            android:text="@string/large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RadioGroup>
