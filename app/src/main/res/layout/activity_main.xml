@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -39,11 +39,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/light_radio_button"
-            android:text="@string/light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
         <RadioButton
             android:id="@+id/medium_radio_button"
             android:text="@string/medium"
@@ -55,7 +51,46 @@
             android:text="@string/ravenous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </RadioGroup>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Pizza Size?"
+        android:textSize="24sp"
+        android:labelFor="@id/hungry_radio_group" />
+
+    <RadioGroup
+        android:id="@+id/pizza_size_radio_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/small_radio_button"
+            android:text="Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/medium_radio_button_radio_button"
+            android:text="@string/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/large_radio_button"
+            android:text="Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+
+
+
+
 
     <TextView
         android:id="@+id/num_pizzas_text_view"
@@ -81,4 +116,17 @@
         android:scaleType="fitStart"
         android:src="@drawable/pizza"
         tools:ignore="ImageContrastCheck" />
-</LinearLayout>
+
+    <RadioButton
+        android:id="@+id/medium_size_radio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/medium" />
+
+    <RadioButton
+        android:id="@+id/light_radio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/light" />
+</RelativeLayout>

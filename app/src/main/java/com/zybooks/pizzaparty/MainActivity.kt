@@ -1,11 +1,13 @@
 package com.zybooks.pizzaparty
 
 import android.os.Bundle
+import android.util.Size
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.size
 import kotlin.math.ceil
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +15,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var numAttendEditText: EditText
     private lateinit var numPizzasTextView: TextView
     private lateinit var howHungryRadioGroup: RadioGroup
+    private lateinit var whatSize: RadioGroup
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         numAttendEditText = findViewById(R.id.num_attend_edit_text)
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
+
         numPizzasTextView.setText("")
     }
 
@@ -35,6 +41,14 @@ class MainActivity : AppCompatActivity() {
             R.id.medium_radio_button -> PizzaCalculator.HungerLevel.MEDIUM
             else -> PizzaCalculator.HungerLevel.RAVENOUS
         }
+        val size = when (whatSize.checkedRadioButtonId){
+            R.id.small_radio_button -> whatSize.checkedRadioButtonId
+            R.id.medium_size_radio_button -> whatSize.checkedRadioButtonId
+            else ->whatSize.checkedRadioButtonId
+
+        }
+
+
         // Get the number of pizzas needed using the Model: Pizza Calculator
         val calculator = PizzaCalculator(numAttend,hungerLevel)
         val totalPizzas = calculator.totalPizzas
