@@ -10,5 +10,8 @@
     <string name="calculate">Calculate</string>
     <string name="total_pizzas">Total pizzas: %d</string>
     <string name="pizza_background">Pizza Background</string>
+    <string name="pizza_size">Pizza Size?</string>
+    <string name="small">Small</string>
+    <string name="large">Large</string>
 
 </resources>
