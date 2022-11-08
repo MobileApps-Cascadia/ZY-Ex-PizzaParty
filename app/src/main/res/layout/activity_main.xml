@@ -21,10 +21,11 @@
         android:id="@+id/num_attend_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="5"
+        android:hint="@string/_10"
         android:importantForAutofill="no"
-        android:hint="@string/_10" />
+        android:inputType="number"
+        android:minHeight="48dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,15 +45,40 @@
             android:text="@string/light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <RadioButton
             android:id="@+id/medium_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/medium"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+        <RadioButton
+            android:id="@+id/ravenous_radio_button"
+            android:text="@string/ravenous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/pizza_size"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/small_radio_button"
+            android:text="@string/small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/medium_radio_button2"
             android:text="@string/medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true" />
         <RadioButton
-            android:id="@+id/ravenous_radio_button"
-            android:text="@string/ravenous"
+            android:id="@+id/large_radio_button"
+            android:text="@string/large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RadioGroup>
@@ -67,11 +93,13 @@
 
     <Button
         android:id="@+id/calc_button"
-        android:text="@string/calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="calculateClick" />
+        android:onClick="calculateClick"
+        android:text="@string/calculate"
+        android:textColor="#212121"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/pizza"
